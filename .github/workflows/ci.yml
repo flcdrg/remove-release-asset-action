@@ -15,6 +15,25 @@ jobs:
           npm install
           npm run all
 
+      - name: Release & Assets
+        id: create-test-release
+        uses: Hs1r1us/Release-AIO@v1.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}        
+        with:
+          tag_name: ${{ github.ref }}
+          asset_files: package.json
+          draft: true
+          prerelease: true
+                    
+      - name: Test action
+        uses: ./ # Uses an action in the root directory
+        id: remove
+        with:
+          release_id: ${{ steps.create-test-release.outputs.id }}
+          asset_name: package.json
+
+      # - name: Remove release
 
   # Job to create/update the latest release draft. Only run for 'main' branch builds
   update_release_draft:
