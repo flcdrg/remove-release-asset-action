@@ -59,6 +59,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          release_id: ${{ steps.create-test-release.outputs.id }}
+          #release_id: ${{ steps.create-test-release.outputs.id }}
+          release_name: Integration test ${{ github.sha }}
           # Whether suppress errors or not
           suppress_errors: false
