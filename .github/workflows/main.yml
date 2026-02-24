@@ -1,4 +1,4 @@
-name: "Main"
+name: 'Main'
 
 on:
   push:
@@ -14,7 +14,7 @@ jobs:
 
       - uses: actions/setup-node@v6
         with:
-          node-version: '24'
+          node-version-file: package.json
 
       - run: npm ci
 

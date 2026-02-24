@@ -1,4 +1,4 @@
-name: "Integration Tests"
+name: 'Integration Tests'
 
 on:
   workflow_dispatch:
@@ -17,7 +17,7 @@ jobs:
 
       - uses: actions/setup-node@v6
         with:
-          node-version: '24'
+          node-version-file: package.json
 
       - name: Release & Assets
         id: create-test-release
@@ -47,7 +47,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           release_id: ${{ steps.create-test-release.outputs.id }}
-          asset_name: "*.json"
+          asset_name: '*.json'
 
       - name: Delete test release
         if: ${{ always() }}
