@@ -7,12 +7,13 @@
   "scripts": {
     "bundle": "npm run format:write && npm run package",
     "build": "tsc",
-    "format:write": "prettier --write **/*.ts",
-    "format-check": "prettier --check **/*.ts",
-    "lint": "eslint src/**/*.ts",
+    "format:write": "npx prettier --write **/*.ts",
+    "format:check": "npx prettier --check **/*.ts",
+    "lint": "npx eslint .",
     "package": "npx rimraf ./dist && npx rollup --config rollup.config.ts --configPlugin @rollup/plugin-typescript",
-    "test": "jest",
-    "all": "npm run build && npm run format:write && npm run lint && npm run package && npm test"
+    "package:watch": "npm run package -- --watch",
+    "test": "npx jest",
+    "all": "npm run format:write && npm run lint && npm run test && npm run package"
   },
   "repository": {
     "type": "git",
