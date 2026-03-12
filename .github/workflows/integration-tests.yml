@@ -19,6 +19,8 @@ jobs:
         with:
           node-version-file: package.json
 
+      - uses: pnpm/action-setup@v4
+
       - name: Release & Assets
         id: create-test-release
         uses: Hs1r1us/Release-AIO@v2.0.0

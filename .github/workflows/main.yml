@@ -1,36 +1,57 @@
 name: 'Main'
-
-on:
+on: # rebuild any PRs and main branch changes
+  pull_request:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
     permissions: {}
+    outputs:
+      NBGV_SemVer2: ${{ steps.gitversion.outputs.NBGV_SemVer2 }}
     steps:
       - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0 # full history for GitVersioning
 
       - uses: actions/setup-node@v6
         with:
           node-version-file: package.json
 
-      - run: npm ci
+      - uses: pnpm/action-setup@v4
 
-      - run: npm run all
+      - run: |
+          pnpm install --frozen-lockfile
+          pnpm nbgv cloud --all-vars
 
-  # Job to create/update the latest release draft. Only run for 'main' branch builds
+      - name: gitversion
+        id: gitversion
+        run: |
+          echo "set-output name=NBGV_SemVer2::$NBGV_SemVer2"
+          echo "::set-output name=NBGV_SemVer2::$NBGV_SemVer2"
+
+      - run: |
+          pnpm all
+          
   update_release_draft:
     name: Update release draft
     runs-on: ubuntu-latest
     permissions:
       contents: write
     needs: [build]
+    env:
+      NBGV_SemVer2: ${{ needs.build.outputs.NBGV_SemVer2 }}
 
     if: github.ref == 'refs/heads/main' # Running this job only for main branch
     steps:
+      - uses: actions/checkout@v6
+
       - uses: release-drafter/release-drafter@v6
         id: create_release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          version: ${{ needs.build.outputs.NBGV_SemVer2 }}
