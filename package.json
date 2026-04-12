@@ -10,7 +10,7 @@
     "format:write": "prettier --write **/*.ts",
     "format:check": "prettier --check **/*.ts",
     "lint": "pnpm exec eslint .",
-    "package": "pnpx rimraf ./dist && pnpm rollup --config rollup.config.ts --configPlugin @rollup/plugin-typescript",
+    "package": "pnpm dlx rimraf ./dist && pnpm rollup --config rollup.config.ts --configPlugin @rollup/plugin-typescript",
     "package:watch": "pnpm run package -- --watch",
     "test": "jest",
     "all": "pnpm run build && pnpm run format:write && pnpm run lint && pnpm run test && pnpm run package"
