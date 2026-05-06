@@ -6,6 +6,7 @@ on:
 
 jobs:
   actions-tagger:
+    name: Tag release
     runs-on: ubuntu-latest
     permissions:
       contents: write
