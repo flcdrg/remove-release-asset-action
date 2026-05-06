@@ -9,6 +9,7 @@ on:
 
 jobs:
   build:
+    name: Integration Tests
     runs-on: ubuntu-latest
     permissions:
       contents: write
