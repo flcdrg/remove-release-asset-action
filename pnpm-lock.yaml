@@ -63,8 +63,8 @@ importers:
         specifier: ^10.6.0
         version: 10.6.0
       eslint-plugin-github:
-        specifier: ^6.1.0
-        version: 6.1.0(eslint@10.6.0)
+        specifier: ^6.1.1
+        version: 6.1.1(eslint@10.6.0)
       eslint-plugin-jest:
         specifier: ^29.15.4
         version: 29.15.4(@typescript-eslint/eslint-plugin@8.63.0(@typescript-eslint/parser@8.63.0(eslint@10.6.0)(typescript@6.0.3))(eslint@10.6.0)(typescript@6.0.3))(eslint@10.6.0)(jest@30.4.2(@types/node@24.10.4))(typescript@6.0.3)
@@ -343,8 +343,8 @@ packages:
       eslint:
         optional: true
 
-  '@eslint/js@9.39.4':
-    resolution: {integrity: sha512-nE7DEIchvtiFTwBw4Lfbu59PG+kCofhjsKaCWzxTpt4lfRjRMqG6uMBzKXuEcyXhOHoUp9riAm7/aWYGhXZ9cw==}
+  '@eslint/js@9.39.5':
+    resolution: {integrity: sha512-QywQuszQh77pIXCsq998c8hbhSTI/azTty1Z6N53dmAudKHhy573j3yvRLsX2BSp8YpLtoCEG8E9DJe+8zUh4A==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
   '@eslint/object-schema@3.0.5':
@@ -1443,8 +1443,8 @@ packages:
     peerDependencies:
       eslint: '*'
 
-  eslint-plugin-github@6.1.0:
-    resolution: {integrity: sha512-+mA0K1/I1JSE9AOiJ4ifMDGu7NplRZX0e3Uy0SjbwyXb2rsDfo5yfT0UCUO+TiOJ/99R1YxFRltizP/PZuB4PQ==}
+  eslint-plugin-github@6.1.1:
+    resolution: {integrity: sha512-xCqu1S/s/CCvoRLafaXNvwiVrxhroNOFLGyG9Dhi4i1PWZgPHlipjXysH6wccPFQyhSKE7gAjSLqdSdM204bZQ==}
     hasBin: true
     peerDependencies:
       eslint: ^8 || ^9 || ^10
@@ -2274,8 +2274,8 @@ packages:
   node-int64@0.4.0:
     resolution: {integrity: sha512-O5lz91xSOeoXP6DulyHfllpq+Eg00MWitZIbtPfoSEvqIHdl5gfcY6hYzDWnj0qD5tz52PI08u9qUvSVeUBeHw==}
 
-  node-releases@2.0.50:
-    resolution: {integrity: sha512-J6l92tKHX6w8Jy5nO1Vuc01NoIiRGi/d6qBKVxh+IQ8Cr3b6HbVNfKiF8ZpFKufTwpwxMmce2W3iQZ861ZRyTg==}
+  node-releases@2.0.51:
+    resolution: {integrity: sha512-wRNIrw4DmVLKQlbgOMdkMx27Wrpzes2hh5Jtbi2bjPd+4wJstWIqP5A+lscnqbm0xxmT5Bpg8Lec5ItEBwx6BQ==}
     engines: {node: '>=18'}
 
   normalize-path@3.0.0:
@@ -3163,7 +3163,7 @@ snapshots:
     optionalDependencies:
       eslint: 10.6.0
 
-  '@eslint/js@9.39.4': {}
+  '@eslint/js@9.39.5': {}
 
   '@eslint/object-schema@3.0.5': {}
 
@@ -4090,7 +4090,7 @@ snapshots:
       baseline-browser-mapping: 2.10.42
       caniuse-lite: 1.0.30001803
       electron-to-chromium: 1.5.389
-      node-releases: 2.0.50
+      node-releases: 2.0.51
       update-browserslist-db: 1.2.3(browserslist@4.28.5)
 
   bs-logger@0.2.6:
@@ -4382,11 +4382,11 @@ snapshots:
       lodash.snakecase: 4.1.1
       lodash.upperfirst: 4.3.1
 
-  eslint-plugin-github@6.1.0(eslint@10.6.0):
+  eslint-plugin-github@6.1.1(eslint@10.6.0):
     dependencies:
       '@eslint/compat': 2.1.0(eslint@10.6.0)
       '@eslint/eslintrc': 3.3.5
-      '@eslint/js': 9.39.4
+      '@eslint/js': 9.39.5
       '@github/browserslist-config': 1.0.0
       '@typescript-eslint/eslint-plugin': 8.63.0(@typescript-eslint/parser@8.63.0(eslint@10.6.0)(typescript@6.0.3))(eslint@10.6.0)(typescript@6.0.3)
       '@typescript-eslint/parser': 8.63.0(eslint@10.6.0)(typescript@6.0.3)
@@ -5475,7 +5475,7 @@ snapshots:
 
   node-int64@0.4.0: {}
 
-  node-releases@2.0.50: {}
+  node-releases@2.0.51: {}
 
   normalize-path@3.0.0: {}
 
