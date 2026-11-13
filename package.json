@@ -55,7 +55,7 @@
     "prettier": "^3.9.10",
     "rimraf": "^6.1.4",
     "rollup": "^4.68.2",
-    "rollup-plugin-license": "^3.7.1",
+    "rollup-plugin-license": "^3.7.2",
     "ts-jest": "^29.4.15",
     "typescript": "^6.0.3"
   },
